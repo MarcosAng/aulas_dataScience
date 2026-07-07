@@ -1,13 +1,16 @@
 import pandas as pd
 
-df = pd.read_csv('C:\\cursos\\sctec\\analisedados\\primeiro_projeto_python\\2.4\\Ice Cream Sales - temperatures.csv')
+funcionarios = {
+    'Nome': ['Alice', 'Bob', 'Charlie', 'David'],   
+    'Endereço': ['Rua A', 'Rua B', 'Rua C', 'Rua D'],
+    'Data Nascimento': ['1990-01-01', '1985-05-15', '1992-09-30', '1988-12-10'],
+    'Data de Admissão': ['2020-01-01', '2019-05-15', '2021-09-30', '2018-12-10'],
+    'Salário': [5000, 6000, 7000, 8000],
+    'Cargo': ['Analista', 'Gerente', 'Diretor', 'Presidente']
+}
 
-#mostrar na tela os valores ordenados da coluna Temperature em ordem crescente
+df = pd.DataFrame(funcionarios)
+print(df)
 
-#df.dropna(subset=['Temperature'], inplace=True)
-
-#df.drop_duplicates(inplace=True, keep='last')
-
-sorted_df = df.sort_values(by='Temperature', ascending=True)
-
-print(sorted_df)
+#linhas da coluna data de admissão
+print(df['Data de Admissão'])
