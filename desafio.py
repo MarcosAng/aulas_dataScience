@@ -1,27 +1,13 @@
-import numpy as np
+import pandas as pd
 
-arr1 = np.array([10, 20, 30, 40, 50])
+df = pd.read_csv('C:\\cursos\\sctec\\analisedados\\primeiro_projeto_python\\2.4\\Ice Cream Sales - temperatures.csv')
 
-#media
-media = np.mean(arr1)
-print(media)
+#mostrar na tela os valores ordenados da coluna Temperature em ordem crescente
 
-#valores minimos e maximos
-minimo = np.min(arr1)
-print(f"Valor mínimo: {minimo}")
-maximo = np.max(arr1)
-print(f"Valor máximo: {maximo}")
-import matplotlib.pyplot as plt
+#df.dropna(subset=['Temperature'], inplace=True)
 
-#criando
-nome_funcionarios = ['João', 'Maria', 'Pedro', 'Ana']
-salarios = [2500, 3000, 2000, 3500]
+#df.drop_duplicates(inplace=True, keep='last')
 
-plt.bar(nome_funcionarios, salarios, color='green')
+sorted_df = df.sort_values(by='Temperature', ascending=True)
 
-#Adicionando título e rótulos aos eixos
-plt.xlabel('Funcionários')
-plt.ylabel('Salários')
-plt.title('Salários dos Funcionários')
-
-plt.show()
+print(sorted_df)
